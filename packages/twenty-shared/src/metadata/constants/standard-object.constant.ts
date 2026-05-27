@@ -583,6 +583,9 @@ export const STANDARD_OBJECTS = {
       timelineActivities: {
         universalIdentifier: '20202020-0414-4daf-9c0d-64fe7b27f89f',
       },
+      socialMediaAccounts: {
+        universalIdentifier: '20202020-ca50-4050-8a50-50a6b7c8d9e0',
+      },
       searchVector: {
         universalIdentifier: '85c71601-72f9-4b7b-b343-d46100b2c74d',
       },
@@ -625,6 +628,9 @@ export const STANDARD_OBJECTS = {
           },
           address: {
             universalIdentifier: '20202020-af01-4a01-8a01-c0aba11cf008',
+          },
+          socialMediaAccounts: {
+            universalIdentifier: '20202020-af01-4a01-8a01-c0aba11cf009',
           },
         },
       },
@@ -698,6 +704,9 @@ export const STANDARD_OBJECTS = {
           },
           timelineActivities: {
             universalIdentifier: '20202020-af01-4a01-8a01-c0aba11c121a',
+          },
+          socialMediaAccounts: {
+            universalIdentifier: '20202020-af01-4a01-8a01-c0aba11c121b',
           },
         },
       },
@@ -2722,6 +2731,104 @@ export const STANDARD_OBJECTS = {
           },
           assignedTasks: {
             universalIdentifier: 'af16226e-6375-4676-8bd9-9d1a57076fc4',
+          },
+        },
+      },
+    },
+  },
+  socialMediaAccount: {
+    universalIdentifier: '20202020-a000-4a00-8a00-c0aba11ca000',
+    fields: {
+      id: { universalIdentifier: '20202020-ca00-4001-8a01-1e2f3a4b5c00' },
+      createdAt: {
+        universalIdentifier: '20202020-ca00-4002-9b02-2f3a4b5c6d00',
+      },
+      updatedAt: {
+        universalIdentifier: '20202020-ca00-4003-8c03-3a4b5c6d7e00',
+      },
+      deletedAt: {
+        universalIdentifier: '20202020-ca00-4004-9d04-4b5c6d7e8f00',
+      },
+      platform: {
+        universalIdentifier: '20202020-ca01-4005-8a05-5a6b7c8d9e00',
+      },
+      handle: {
+        universalIdentifier: '20202020-ca02-4006-8a06-6b7c8d9e0f00',
+      },
+      url: {
+        universalIdentifier: '20202020-ca03-4007-8a07-7c8d9e0f1a00',
+      },
+      company: {
+        universalIdentifier: '20202020-ca04-4008-8a08-8d9e0f1a2b00',
+      },
+      position: {
+        universalIdentifier: '20202020-ca05-4009-8a09-9e0f1a2b3c00',
+      },
+      createdBy: {
+        universalIdentifier: '20202020-ca06-4010-8a10-0f1a2b3c4d00',
+      },
+      updatedBy: {
+        universalIdentifier: '20202020-ca07-4011-8a11-1a2b3c4d5e00',
+      },
+      searchVector: {
+        universalIdentifier: '20202020-ca08-4012-8a12-2b3c4d5e6f00',
+      },
+    },
+    indexes: {
+      companyIdIndex: {
+        universalIdentifier: '20202020-ca70-4070-8a70-70c8d9e0f1a0',
+      },
+      searchVectorGinIndex: {
+        universalIdentifier: '20202020-ca71-4071-8a71-71d9e0f1a2b0',
+      },
+    },
+    views: {
+      allSocialMediaAccounts: {
+        universalIdentifier: '20202020-ca90-4090-8a90-90c0aba11ca0',
+        viewFields: {
+          platform: {
+            universalIdentifier: '20202020-ca90-4090-8a90-90c0aba11ca1',
+          },
+          handle: {
+            universalIdentifier: '20202020-ca90-4090-8a90-90c0aba11ca2',
+          },
+          url: {
+            universalIdentifier: '20202020-ca90-4090-8a90-90c0aba11ca3',
+          },
+          company: {
+            universalIdentifier: '20202020-ca90-4090-8a90-90c0aba11ca4',
+          },
+          createdAt: {
+            universalIdentifier: '20202020-ca90-4090-8a90-90c0aba11ca5',
+          },
+        },
+      },
+      socialMediaAccountRecordPageFields: {
+        universalIdentifier: '20202020-ca91-4091-8a91-91c0aba11ca0',
+        viewFields: {
+          platform: {
+            universalIdentifier: '20202020-ca91-4091-8a91-91c0aba11ca1',
+          },
+          handle: {
+            universalIdentifier: '20202020-ca91-4091-8a91-91c0aba11ca2',
+          },
+          url: {
+            universalIdentifier: '20202020-ca91-4091-8a91-91c0aba11ca3',
+          },
+          company: {
+            universalIdentifier: '20202020-ca91-4091-8a91-91c0aba11ca4',
+          },
+          createdAt: {
+            universalIdentifier: '20202020-ca91-4091-8a91-91c0aba11ca5',
+          },
+          createdBy: {
+            universalIdentifier: '20202020-ca91-4091-8a91-91c0aba11ca6',
+          },
+          updatedAt: {
+            universalIdentifier: '20202020-ca91-4091-8a91-91c0aba11ca7',
+          },
+          updatedBy: {
+            universalIdentifier: '20202020-ca91-4091-8a91-91c0aba11ca8',
           },
         },
       },

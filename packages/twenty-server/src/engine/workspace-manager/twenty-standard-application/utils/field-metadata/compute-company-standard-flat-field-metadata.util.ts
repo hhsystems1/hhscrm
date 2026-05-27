@@ -505,4 +505,26 @@ export const buildCompanyStandardFlatFieldMetadatas = ({
     twentyStandardApplicationId,
     now,
   }),
+  socialMediaAccounts: createStandardRelationFieldFlatMetadata({
+    objectName,
+    workspaceId,
+    context: {
+      type: FieldMetadataType.RELATION,
+      morphId: null,
+      fieldName: 'socialMediaAccounts',
+      label: i18nLabel(msg`Social Media Accounts`),
+      description: i18nLabel(msg`Social media accounts linked to the company`),
+      icon: 'IconShare3',
+      isNullable: true,
+      targetObjectName: 'socialMediaAccount',
+      targetFieldName: 'company',
+      settings: {
+        relationType: RelationType.ONE_TO_MANY,
+      },
+    },
+    standardObjectMetadataRelatedEntityIds,
+    dependencyFlatEntityMaps,
+    twentyStandardApplicationId,
+    now,
+  }),
 });

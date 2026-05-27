@@ -679,6 +679,36 @@ export const STANDARD_FLAT_OBJECT_METADATA_BUILDERS_BY_OBJECT_NAME = {
       twentyStandardApplicationId,
       now,
     }),
+  socialMediaAccount: ({
+    now,
+    workspaceId,
+    standardObjectMetadataRelatedEntityIds,
+    twentyStandardApplicationId,
+    dependencyFlatEntityMaps,
+  }: Omit<
+    CreateStandardObjectArgs<'socialMediaAccount'>,
+    'context' | 'objectName'
+  >) =>
+    createStandardObjectFlatMetadata({
+      objectName: 'socialMediaAccount',
+      dependencyFlatEntityMaps,
+      context: {
+        universalIdentifier:
+          STANDARD_OBJECTS.socialMediaAccount.universalIdentifier,
+        nameSingular: 'socialMediaAccount',
+        namePlural: 'socialMediaAccounts',
+        labelSingular: i18nLabel(msg`Social Media Account`),
+        labelPlural: i18nLabel(msg`Social Media Accounts`),
+        description: i18nLabel(msg`A social media account linked to a company`),
+        icon: 'IconShare3',
+        isSearchable: true,
+        labelIdentifierFieldMetadataName: 'handle',
+      },
+      workspaceId,
+      standardObjectMetadataRelatedEntityIds,
+      twentyStandardApplicationId,
+      now,
+    }),
   workspaceMember: ({
     now,
     workspaceId,

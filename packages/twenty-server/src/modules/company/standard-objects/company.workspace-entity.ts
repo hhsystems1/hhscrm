@@ -13,6 +13,7 @@ import { type NoteTargetWorkspaceEntity } from 'src/modules/note/standard-object
 import { type OpportunityWorkspaceEntity } from 'src/modules/opportunity/standard-objects/opportunity.workspace-entity';
 import { type PersonWorkspaceEntity } from 'src/modules/person/standard-objects/person.workspace-entity';
 import { type TaskTargetWorkspaceEntity } from 'src/modules/task/standard-objects/task-target.workspace-entity';
+import { type SocialMediaAccountWorkspaceEntity } from 'src/modules/social-media-account/standard-objects/social-media-account.workspace-entity';
 import { type TimelineActivityWorkspaceEntity } from 'src/modules/timeline/standard-objects/timeline-activity.workspace-entity';
 import { type WorkspaceMemberWorkspaceEntity } from 'src/modules/workspace-member/standard-objects/workspace-member.workspace-entity';
 
@@ -56,4 +57,5 @@ export class CompanyWorkspaceEntity {
   opportunities: EntityRelation<OpportunityWorkspaceEntity[]>;
   attachments: EntityRelation<AttachmentWorkspaceEntity[]>;
   timelineActivities: EntityRelation<TimelineActivityWorkspaceEntity[]>;
+  socialMediaAccounts: EntityRelation<SocialMediaAccountWorkspaceEntity[]>;
 }
