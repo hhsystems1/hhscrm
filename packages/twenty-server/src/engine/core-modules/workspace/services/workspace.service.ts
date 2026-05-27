@@ -101,6 +101,9 @@ export class WorkspaceService extends TypeOrmQueryService<WorkspaceEntity> {
     enabledAiModelIds: PermissionFlagType.AI_SETTINGS,
     useRecommendedModels: PermissionFlagType.AI_SETTINGS,
     isInternalMessagesImportEnabled: PermissionFlagType.WORKSPACE,
+    chatwootApiBaseUrl: PermissionFlagType.WORKSPACE,
+    chatwootApiAccessToken: PermissionFlagType.WORKSPACE,
+    chatwootAccountId: PermissionFlagType.WORKSPACE,
   };
 
   constructor(

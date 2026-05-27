@@ -346,4 +346,16 @@ export class WorkspaceEntity {
     onDelete: 'CASCADE',
   })
   applications: Relation<Application[]>;
+
+  @Field(() => String, { nullable: true })
+  @Column({ type: 'text', nullable: true })
+  chatwootApiBaseUrl: string | null;
+
+  @Field(() => String, { nullable: true })
+  @Column({ type: 'text', nullable: true })
+  chatwootApiAccessToken: string | null;
+
+  @Field(() => String, { nullable: true })
+  @Column({ type: 'text', nullable: true })
+  chatwootAccountId: string | null;
 }

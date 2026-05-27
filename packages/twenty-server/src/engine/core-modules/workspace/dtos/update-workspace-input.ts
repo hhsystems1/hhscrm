@@ -143,4 +143,19 @@ export class UpdateWorkspaceInput {
   @IsBoolean()
   @IsOptional()
   isInternalMessagesImportEnabled?: boolean;
+
+  @Field({ nullable: true })
+  @IsString()
+  @IsOptional()
+  chatwootApiBaseUrl?: string;
+
+  @Field({ nullable: true })
+  @IsString()
+  @IsOptional()
+  chatwootApiAccessToken?: string;
+
+  @Field({ nullable: true })
+  @IsString()
+  @IsOptional()
+  chatwootAccountId?: string;
 }
