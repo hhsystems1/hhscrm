@@ -47,7 +47,7 @@ describe('title-utils', () => {
     expect(getPageTitleFromPath('/settings/general')).toBe(
       'General - Settings',
     );
-    expect(getPageTitleFromPath('/')).toBe('Twenty');
-    expect(getPageTitleFromPath('/random')).toBe('Twenty');
+    expect(getPageTitleFromPath('/')).toBe('Mission Control CRM');
+    expect(getPageTitleFromPath('/random')).toBe('Mission Control CRM');
   });
 });
