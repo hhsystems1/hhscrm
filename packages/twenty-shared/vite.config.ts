@@ -1,7 +1,6 @@
 // @ts-expect-error: no type declarations for path in this config
 import path from 'path';
 import { defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
 // @ts-expect-error: importing JSON without resolveJsonModule
 import packageJson from './package.json';
 
@@ -43,11 +42,7 @@ export default defineConfig(() => {
         '@/': path.resolve(__dirname, 'src') + '/',
       },
     },
-    plugins: [
-      tsconfigPaths({
-        root: __dirname,
-      }),
-    ],
+    plugins: [],
     build: {
       emptyOutDir: false,
       outDir: 'dist',

@@ -12,8 +12,6 @@ import {
   searchForWorkspaceRoot,
 } from 'vite';
 import svgr from 'vite-plugin-svgr';
-import tsconfigPaths from 'vite-tsconfig-paths';
-
 import { createWywProfilingPlugin } from 'twenty-shared/vite';
 
 export default defineConfig(({ mode }) => {
@@ -33,50 +31,19 @@ export default defineConfig(({ mode }) => {
     : 3001;
 
   const CHUNK_SIZE_WARNING_LIMIT = 1024 * 1024; // 1MB
-  // Please don't increase this limit for main index chunk
-  // If it gets too big then find modules in the code base
-  // that can be loaded lazily, there are more!
-  const MAIN_CHUNK_SIZE_LIMIT = 6.8 * 1024 * 1024; // 6.8MB for main index chunk
-  const OTHER_CHUNK_SIZE_LIMIT = 5 * 1024 * 1024; // 5MB for other chunks
+  const MAIN_CHUNK_SIZE_LIMIT = 6.8 * 1024 * 1024; // 6.8MB
+  const OTHER_CHUNK_SIZE_LIMIT = 5 * 1024 * 1024; // 5MB
 
   if (VITE_BUILD_SOURCEMAP === 'true') {
-    // oxlint-disable-next-line no-console
     console.log(`VITE_BUILD_SOURCEMAP: ${VITE_BUILD_SOURCEMAP}`);
   }
 
   return {
     root: __dirname,
-    cacheDir: '../../node_modules/.vite/packages/twenty-front',
-
-    server: {
-      port: port,
-      ...(VITE_HOST ? { host: VITE_HOST } : {}),
-      ...(SSL_KEY_PATH && SSL_CERT_PATH
-        ? {
-            protocol: 'https',
-            https: {
-              key: fs.readFileSync(env.SSL_KEY_PATH),
-              cert: fs.readFileSync(env.SSL_CERT_PATH),
-            },
-          }
-        : {
-            protocol: 'http',
-          }),
-      fs: {
-        allow: [
-          searchForWorkspaceRoot(process.cwd()),
-          '**/@blocknote/core/src/fonts/**',
-        ],
-      },
-    },
 
     plugins: [
       react({
         plugins: [['@lingui/swc-plugin', {}]],
-      }),
-      tsconfigPaths({
-        root: __dirname,
-        projects: ['tsconfig.json'],
       }),
       svgr(),
       lingui({
@@ -243,6 +210,8 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
+        '@': path.resolve(__dirname, 'src/modules'),
+        '~': path.resolve(__dirname, 'src'),
         path: 'rollup-plugin-node-polyfills/polyfills/path',
       },
     },

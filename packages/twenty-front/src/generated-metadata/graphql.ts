@@ -5820,6 +5820,7 @@ export enum WidgetConfigurationType {
   AGGREGATE_CHART = 'AGGREGATE_CHART',
   BAR_CHART = 'BAR_CHART',
   CALENDAR = 'CALENDAR',
+  CHATWOOT = 'CHATWOOT',
   EMAILS = 'EMAILS',
   EMAIL_THREAD = 'EMAIL_THREAD',
   FIELD = 'FIELD',
@@ -5844,6 +5845,7 @@ export enum WidgetConfigurationType {
 
 export enum WidgetType {
   CALENDAR = 'CALENDAR',
+  CHATWOOT = 'CHATWOOT',
   EMAILS = 'EMAILS',
   EMAIL_THREAD = 'EMAIL_THREAD',
   FIELD = 'FIELD',

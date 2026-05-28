@@ -17,6 +17,7 @@ import { WorkflowRunWidget } from '@/page-layout/widgets/workflow/components/Wor
 import { WorkflowVersionWidget } from '@/page-layout/widgets/workflow/components/WorkflowVersionWidget';
 import { RecordTableWidgetRenderer } from '@/page-layout/widgets/record-table/components/RecordTableWidgetRenderer';
 import { WorkflowWidget } from '@/page-layout/widgets/workflow/components/WorkflowWidget';
+import { ChatwootWidget } from '@/page-layout/widgets/chatwoot/components/ChatwootWidget';
 import { WidgetType } from '~/generated-metadata/graphql';
 
 type WidgetContentRendererProps = {
@@ -80,6 +81,9 @@ export const WidgetContentRenderer = ({
 
     case WidgetType.EMAIL_THREAD:
       return <EmailThreadWidget widget={widget} />;
+
+    case WidgetType.CHATWOOT:
+      return <ChatwootWidget widget={widget} />;
 
     default:
       return null;

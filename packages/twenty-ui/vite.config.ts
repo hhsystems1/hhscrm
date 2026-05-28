@@ -4,12 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { createWywProfilingPlugin } from 'twenty-shared/vite';
 import { defineConfig } from 'vite';
-import checker from 'vite-plugin-checker';
-import dts, { type PluginOptions } from 'vite-plugin-dts';
 import svgr from 'vite-plugin-svgr';
-import tsconfigPaths from 'vite-tsconfig-paths';
-
-type Checkers = Parameters<typeof checker>[0];
 
 import packageJson from './package.json';
 
@@ -38,24 +33,7 @@ const entryFileNames = (chunk: any, extension: 'cjs' | 'mjs') => {
   return `${moduleDirectory}.${extension}`;
 };
 
-export default defineConfig(({ command }) => {
-  const isBuildCommand = command === 'build';
-
-  const tsConfigPath = isBuildCommand
-    ? path.resolve(__dirname, './tsconfig.lib.json')
-    : path.resolve(__dirname, './tsconfig.json');
-
-  const checkersConfig: Checkers = {
-    typescript: {
-      tsconfigPath: tsConfigPath,
-    },
-  };
-
-  const dtsConfig: PluginOptions = {
-    entryRoot: 'src',
-    tsconfigPath: tsConfigPath,
-  };
-
+export default defineConfig(() => {
   const BUNDLED_DEPS = ['@tabler/icons-react'];
 
   const externalDeps = Object.keys(packageJson.dependencies || {}).filter(
@@ -83,13 +61,7 @@ export default defineConfig(({ command }) => {
     assetsInclude: ['src/**/*.svg'],
     plugins: [
       react(),
-      tsconfigPaths({
-        root: __dirname,
-        projects: ['tsconfig.json'],
-      }),
       svgr(),
-      dts(dtsConfig),
-      checker(checkersConfig),
       createWywProfilingPlugin(
         wyw({
           include: [path.resolve(__dirname, 'src') + '/**/*.{ts,tsx}'],

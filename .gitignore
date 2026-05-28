@@ -25,6 +25,11 @@
 .swc
 
 **/**/logs/**
+*.log
+
+# Build utility scripts
+build-deps.js
+link-packages.js
 
 coverage
 dist
