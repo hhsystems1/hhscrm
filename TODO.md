@@ -19,6 +19,40 @@
 - [ ] Backend `duplicateWorkspace` mutation (clone template workspace schema)
 - [ ] Admin creates workspace → assigns Chatwoot credentials → sends invite link
 
+## Phase 4A: Account Creation and Social Linking
+- [ ] Decide account model for each person
+  - Internal staff: invite as workspace members
+  - Clients/customers: create Contact/Company records first, then add portal access only if needed
+- [ ] Configure Google OAuth for sign-in and account linking
+  - Set `AUTH_GOOGLE_ENABLED=true`
+  - Set `AUTH_GOOGLE_CLIENT_ID`, `AUTH_GOOGLE_CLIENT_SECRET`
+  - Set callback URLs for `/auth/google/redirect` and `/auth/google-apis/get-access-token`
+- [ ] Configure Microsoft OAuth for sign-in and account linking
+  - Set `AUTH_MICROSOFT_ENABLED=true`
+  - Set `AUTH_MICROSOFT_CLIENT_ID`, `AUTH_MICROSOFT_CLIENT_SECRET`
+  - Set callback URLs for `/auth/microsoft/redirect` and `/auth/microsoft-apis/get-access-token`
+- [ ] Enable Gmail/Calendar sync flags when OAuth apps are ready
+  - `MESSAGING_PROVIDER_GMAIL_ENABLED=true`
+  - `CALENDAR_PROVIDER_GOOGLE_ENABLED=true`
+  - `MESSAGING_PROVIDER_MICROSOFT_ENABLED=true`
+  - `CALENDAR_PROVIDER_MICROSOFT_ENABLED=true`
+- [ ] Add Contact and Company social profile fields
+  - LinkedIn URL
+  - Twitter/X URL
+  - Facebook URL
+  - Instagram URL
+  - TikTok URL
+- [ ] Build non-Google/Microsoft social OAuth connectors one provider at a time
+  - Provider app setup and scopes
+  - OAuth redirect endpoint
+  - Encrypted token storage
+  - Refresh and unlink flows
+  - UI status for connected/disconnected accounts
+- [ ] Define client portal requirements before creating external user logins
+  - What records clients can see
+  - What actions clients can take
+  - Invite, password reset, and deactivation flow
+
 ## Phase 5: HHS Admin Panel
 - [ ] List all workspaces with status/activation info
 - [ ] Create new workspace (trigger onboarding)
